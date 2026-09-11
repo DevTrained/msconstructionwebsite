@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# AI / GEO crawlers - explicitly allowed so AI assistants (ChatGPT, Perplexity, Google AI Overviews, etc.)
+# can read and cite this site when answering local construction queries.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://msconstruction.services/sitemap.xml
