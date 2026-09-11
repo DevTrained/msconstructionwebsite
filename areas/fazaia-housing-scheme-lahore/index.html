@@ -20,6 +20,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Construction Company in Lahore Fazaia Housing Scheme">
 <meta name="twitter:description" content="Construction company serving Lahore Fazaia Housing Scheme on Raiwind Road. Free site visit, fixed 24-hour quote, 30-day price lock, A+ grade materials since 1994.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/styles.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-23JEMZ9Z3N"></script>
@@ -230,8 +235,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
   <div class="max-w-6xl mx-auto px-5 sm:px-6 mt-6">
-    <div class="rounded-2xl overflow-hidden border border-white/10">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.8088555845!2d74.24134710962097!3d31.424372174150676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919015ef8a2e45b%3A0x6a5fb9696bd3140a!2sMS%20Construction%20Services%20-%20construction%20company%20in%20Lahore!5e1!3m2!1sen!2s!4v1789067418657!5m2!1sen!2s" width="600" height="300" style="border:0;" class="w-full h-64 sm:h-72" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="MS Construction Services location on Google Maps"></iframe>
+    <div id="mapFacade" class="rounded-2xl overflow-hidden border border-white/10 bg-navy2 h-64 sm:h-72 flex flex-col items-center justify-center gap-2 cursor-pointer group" role="button" aria-label="Load interactive Google Map" tabindex="0">
+      <div class="text-4xl">&#128205;</div>
+      <div class="text-white font-heading text-[15px]">MS Construction Services</div>
+      <div class="text-slate-400 text-xs px-4 text-center">30, Block C, OPF Housing Scheme, Lahore</div>
+      <div class="inline-flex items-center gap-2 bg-gold group-hover:bg-goldLight text-navyDark font-bold text-xs px-4 py-2 rounded-full transition mt-1">View Interactive Map</div>
     </div>
   </div>
 </footer>
@@ -262,6 +270,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }, { threshold: 0.1 });
   revealEls.forEach(el => io.observe(el));
+
+  const mapFacade = document.getElementById('mapFacade');
+  if (mapFacade) {
+    function loadMap(){
+      mapFacade.innerHTML = '<iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.8088555845!2d74.24134710962097!3d31.424372174150676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919015ef8a2e45b%3A0x6a5fb9696bd3140a!2sMS%20Construction%20Services%20-%20construction%20company%20in%20Lahore!5e1!3m2!1sen!2s!4v1789067418657!5m2!1sen!2s" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="MS Construction Services location on Google Maps"></iframe>';
+    }
+    mapFacade.addEventListener('click', loadMap);
+    mapFacade.addEventListener('keypress', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadMap(); } });
+  }
 </script>
 </body>
 </html>
