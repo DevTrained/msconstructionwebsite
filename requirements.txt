@@ -1,0 +1,2 @@
+# This is a static HTML site — no Python dependencies needed to serve it.
+# build-scripts/ contains the generator scripts used to produce the HTML during development.
