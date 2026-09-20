@@ -8,6 +8,24 @@ DirectoryIndex index.html index.php
 # Don't let visitors browse raw folder contents if an index.html is ever missing
 Options -Indexes
 
+# ---- Canonical host + protocol ----
+# Force https:// and force the non-www host (matches the canonical URLs used
+# sitewide in <link rel="canonical">). Without this, Google indexes
+# https://www.msconstruction.services/ as a separate URL from
+# https://msconstruction.services/, splitting ranking signals and impressions
+# between the two in Search Console.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) any www host -> https non-www (fixes protocol + www in one redirect)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # 2) plain http on the non-www host -> https
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
 # Correct MIME type for WebP on older server configs
 AddType image/webp .webp
 
