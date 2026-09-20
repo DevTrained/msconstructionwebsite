@@ -121,10 +121,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
     <div class="flex gap-2.5 items-center">
       <a class="hidden sm:inline-flex items-center gap-2 border border-white/40 hover:border-white hover:bg-white/10 text-white font-bold text-sm px-5 py-2.5 rounded-lg transition" href="tel:+923061982828">📞 0306-1982828</a>
-      <a id="headerWaBtn" class="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsappDark text-white font-bold text-sm px-5 py-2.5 rounded-lg shadow-lg shadow-whatsapp/30 transition hover:-translate-y-0.5" href="#" target="_blank">💬 WhatsApp</a>
     </div>
   </div>
 </header>
+<main id="main">
 <nav class="max-w-4xl mx-auto px-5 sm:px-6 pt-4 text-xs text-slate-400" aria-label="Breadcrumb">
   <a href="/" class="hover:text-gold transition">Home</a> / <a href="/projects/" class="hover:text-gold transition">Projects</a> / <span class="text-slate-500">10 Marla House, Lake City</span>
 </nav>
@@ -402,6 +402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+</main>
 <footer class="bg-navyDark text-slate-400 py-9 text-[13.5px]">
   <div class="max-w-6xl mx-auto px-5 sm:px-6 flex flex-col sm:flex-row items-center sm:justify-between gap-4 text-center sm:text-left">
     <div>
@@ -440,6 +441,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 mt-6 pt-6 border-t border-white/10">
+    <div class="text-[11px] tracking-wider text-slate-500 uppercase mb-2">Popular Searches</div>
+    <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[12.5px] text-slate-400">
+        <a href="/company/construction-company-in-lahore/" class="hover:text-goldLight transition">Construction Company in Lahore</a>
+        <a href="/company/best-construction-company-in-lahore/" class="hover:text-goldLight transition">Best Construction Company in Lahore</a>
+        <a href="/company/home-construction-company-in-lahore/" class="hover:text-goldLight transition">Home Construction Company in Lahore</a>
+        <a href="/areas/dha-lahore/" class="hover:text-goldLight transition">Construction Company in DHA Lahore</a>
+        <a href="/areas/bahria-town-lahore/" class="hover:text-goldLight transition">Best Construction Company in Bahria Town Lahore</a>
+        <a href="/company/contractor-in-lahore/" class="hover:text-goldLight transition">Contractor in Lahore</a>
+        <a href="/company/home-builder-in-lahore/" class="hover:text-goldLight transition">Home Builder in Lahore</a>
+    </div>
+  </div>
   <div class="max-w-6xl mx-auto px-5 sm:px-6 mt-6">
     <div id="mapFacade" class="rounded-2xl overflow-hidden border border-white/10 bg-navy2 h-64 sm:h-72 flex flex-col items-center justify-center gap-2 cursor-pointer group" role="button" aria-label="Load interactive Google Map" tabindex="0">
       <div class="text-4xl">&#128205;</div>
@@ -460,8 +473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
   }
   const defaultMsg = "Hello, I'd like to discuss my construction project with MS Construction Services.";
-  document.getElementById('headerWaBtn').href = waLink(defaultMsg);
-  const floatBtn = document.getElementById('floatWaBtn');
+    const floatBtn = document.getElementById('floatWaBtn');
   if (floatBtn) floatBtn.href = waLink(defaultMsg);
   const svcBtn = document.getElementById('serviceWaBtn');
   if (svcBtn) svcBtn.href = waLink(SERVICE_MSG || defaultMsg);
